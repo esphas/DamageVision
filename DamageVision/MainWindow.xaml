@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DamageVision"
+        xmlns:Properties="clr-namespace:DamageVision.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Damage Vision" MinHeight="200"
+        Topmost="True" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}"
+        Loaded="OnLoaded" MouseDown="OnMouseDown" MouseWheel="OnMouseWheel" Closing="OnClosing">
     <Grid>
-        
+        <Canvas x:Name="theCanvas">
+            <Canvas.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="miShowDps" IsCheckable="True" />
+                    <MenuItem x:Name="miShowDamageInQuest" IsCheckable="True" />
+                    <MenuItem x:Name="miShowDamageAfterQuest" IsCheckable="True" />
+                    <MenuItem x:Name="miShowPercentageInQuest" IsCheckable="True" />
+                    <MenuItem x:Name="miShowPercentageAfterQuest" IsCheckable="True" />
+                    <MenuItem x:Name="miExitOnGameExit" IsCheckable="True" />
+                    <Separator/>
+                    <MenuItem x:Name="miExit" Click="ExitProgram"/>
+                </ContextMenu>
+            </Canvas.ContextMenu>
+        </Canvas>
     </Grid>
 </Window>
